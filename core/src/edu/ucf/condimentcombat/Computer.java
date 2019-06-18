@@ -1,6 +1,4 @@
 package edu.ucf.condimentcombat;
-
-
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -9,10 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-enum Direction {
-    left, right;
-}
-public class Fighter {
+public class Computer {
     Sprite sprite;
     Rectangle hitbox;
     int health;
@@ -25,7 +20,7 @@ public class Fighter {
     Bullet bullet;
     Projectiles projectile;
 
-    public Fighter(int x, int y, String img) {
+    public Computer(int x, int y, String img) {
         sprite = new Sprite(new Texture(img));
         hitbox = new Rectangle(x, y, width, height);
         sprite.setPosition(x, y);
@@ -36,7 +31,6 @@ public class Fighter {
     public void draw(SpriteBatch b) {
         sprite.draw(b);
     }
-
     public void update() {
         sprite.setPosition(hitbox.x, hitbox.y);
 
@@ -76,4 +70,5 @@ public class Fighter {
 
         hitbox.y += velocity;
     }
+
 }
